@@ -43,6 +43,11 @@
       <p>{{ austen?.name }}'s works:</p>
       <!-- Activity 9: Render a list of Austen's works. Hint: Use the v-for directive to iterate through the array of authors that you have filtered out. -->
       <!-- TODO: CODE TO RENDER LIST OF AUSTEN'S WORKS HERE -->
+      <ul>
+        <li v-for="work in austen.famousWorks" :key="work.title">
+          {{ work.title }}
+        </li>
+      </ul>
     </section>
 
     <section class="lab-section">
@@ -122,6 +127,7 @@ const allFamousWorks = computed(() => {
 // Activity 4: Find author by name
 const orwell = computed(() => {
   // TODO: CODE TO FIND AUTHOR BY NAME HERE
+  return authors.find((author) => author.name == 'George Orwell')
 })
 
 // Activity 5: Find author by ID
